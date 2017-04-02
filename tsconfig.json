@@ -37,9 +37,6 @@
         "*",
         "src/*",
         "src/main/*",
-        "src/main/app/*",
-        "src/main/core-domain/*",
-        "src/main/framework/*",
         "node_modules/*"
       ],
       "main/*": [ "./src/main/*" ]
