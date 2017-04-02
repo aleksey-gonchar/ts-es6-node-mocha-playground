@@ -1,1 +1,1 @@
-export * from 'test.class'
+export * from './tool.class'

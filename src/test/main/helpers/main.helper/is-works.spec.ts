@@ -1,49 +1,29 @@
 'use strict'
 import { sinon, expect, assert, faker, diff } from 'test/helpers/index'
 const proxyquire =  require('proxyquire')
-
-// const cmds = require('app/commands')
-// import { getHandler } from 'framework/controllers/version/get.handler'
+const path =  require('path')
 
 describe('helpers/main.helper', () => {
-  it.only('mocks class', (done) => {
-    expect(1).to.be.an('number')
-    done()
-    // const GetApiVersionCommandStub = sinon.stub().callsFake( ()=> {
-    //   console.log(108)
-    // })
-    // const cmdBusSrvStub = sinon.stub()
-    //
-    // const mdl1 = proxyquire(
-    //   process.cwd() +
-    //   '/src/main/app/commands/index',
-    //   {
-    //     './get-api-version.command': GetApiVersionCommandStub
-    //   }
-    // )
+  it.only('mocks class', () => {
+    const ToolStub = sinon.spy(() => {
+      return {
+        test: () => {
+          console.log('ToolStub.test() fake call')
+        }
+      }
+    })
 
-    // const mdl = proxyquire(
-    //   process.cwd() +
-    //   '/src/main/framework/controllers/version/get.handler',
-    //   {
-    //     'GetApiVersionCommandStub': GetApiVersionCommandStub,
-    //     './app.index': GetApiVersionCommandStub,
-    //     './commands.index': GetApiVersionCommandStub,
-    //     './get-api-version.command': GetApiVersionCommandStub,
-    //     './command-bus.service': cmdBusSrvStub
-    //   }
-    // )
-    // const stubClass = sinon.stub(cmds, 'GetApiVersionCommand')
+    const mdl2 = proxyquire(path.join(
+      process.cwd(), '/src/main',
+      'helpers/main.helper'
+      ),
+      {
+        'classes/index': { Tool: ToolStub }
+      }
+    )
 
-    // const reqStub:any = {}
-    // const resStub:any = {}
-    // const nextStub = () => {
-    //   expect(resStub).to.have.property('body')
-    //   expect(resStub).to.have.property('statusCode')
-    //   expect(resStub.statusCode).to.equal(200)
-    //   done()
-    // }
-    //
-    // mdl1.getHandler(reqStub, resStub, nextStub)
+    mdl2.mainHelper.help()
+
+    expect(ToolStub.calledOnce).to.eq(true)
   })
 })
