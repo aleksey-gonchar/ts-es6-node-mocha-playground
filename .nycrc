@@ -1,0 +1,25 @@
+{
+  "include": [
+    "./src/*.ts",
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "typings",
+    "src/**/*.d.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx"
+  ],
+  "extension": [
+    ".ts",
+    ".tsx"
+  ],
+  "require": [
+    "./src/main/pre-loader.js"
+  ],
+  "reporter": [
+    "lcov",
+    "text",
+    "json"
+  ],
+  "all": true
+}

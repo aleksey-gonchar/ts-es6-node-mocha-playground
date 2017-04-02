@@ -1,0 +1,7 @@
+--ui bdd
+--require ./src/test/helpers/index.js
+--recursive
+--reporter spec
+--full-trace
+--timeout 15000
+./src/test/**/*.spec.ts

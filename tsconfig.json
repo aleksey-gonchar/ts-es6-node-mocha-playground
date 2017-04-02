@@ -1,0 +1,68 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "umd",
+    "moduleResolution": "classic",
+    "sourceMap": true,
+    "declaration": false,
+    "pretty": true,
+    "lib": [
+      "dom",
+      "es6",
+      "es2016"
+    ],
+    "jsx": "react",
+    "jsxFactory": "h",
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+
+    "noLib": false,
+    "noEmitHelpers": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitUseStrict": true,
+
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+
+    "baseUrl": "./",
+
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "src/main/*",
+        "src/main/app/*",
+        "src/main/core-domain/*",
+        "src/main/framework/*",
+        "node_modules/*"
+      ],
+      "main/*": [ "./src/main/*" ]
+    },
+
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules"
+    ],
+
+    "types": [
+      "chai",
+      "es6-promise",
+      "express",
+      "mocha",
+      "node",
+      "sinon"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "typings"
+  ],
+  "compileOnSave": false
+}

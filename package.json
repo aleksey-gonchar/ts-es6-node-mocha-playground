@@ -1,0 +1,63 @@
+{
+  "name": "pce-api-gw",
+  "version": "0.1.0",
+  "description": "server-side rendering for promoted comments widget",
+  "main": "./src/main/main.js",
+  "watch": {
+    "lint": "tslint -c ./tslint.json './src/**/*.ts' -t verbose"
+  },
+  "scripts": {
+    "lint": "tslint -c ./tslint.json './src/**/*.ts' -t verbose",
+    "watch:lint": "npm-watch",
+    "server": "npm run server:prod",
+    "server:local": "ENV=local node src/main/main.js",
+    "server:stage": "ENV=stage node src/main/main.js",
+    "server:prod": "ENV=production node src/main/main.js",
+    "test": "NODE_ENV=test npm run mocha",
+    "test:cover": "NODE_ENV=test nyc npm test",
+    "mocha": "node ./node_modules/mocha/bin/_mocha --opts ./src/test/mocha.opts"
+  },
+  "dependencies": {
+    "bluebird": "3.5.0",
+    "body-parser": "1.15.0",
+    "bugsnag": "1.9.0",
+    "bunyan": "1.8.1",
+    "bunyan-format": "0.2.1",
+    "compression": "1.6.1",
+    "express": "4.13.4",
+    "express-handlebars": "3.0.0",
+    "lodash": "4.17.2",
+    "uuid": "3.0.1",
+    "phantomjs-prebuilt": "2.1.13",
+    "redis": "2.7.1",
+    "require-tree": "1.1.1",
+    "request": "2.81.0",
+    "toobusy-js": "0.5.0"
+  },
+  "devDependencies": {
+    "@types/es6-promise": "*",
+    "@types/express": "*",
+    "@types/chai": "3.4.35",
+    "@types/mocha": "2.2.39",
+    "@types/node": "*",
+    "@types/sinon": "1.16.35",
+
+    "chai": "3.5.0",
+    "faker": "4.1.0",
+    "mocha": "3.2.0",
+
+    "npm-watch": "0.1.8",
+    "nyc": "10.2.0",
+    "opn": "4.0.2",
+    "proxyquire": "1.7.11",
+    "revalidator": "0.3.1",
+    "sinon": "2.0.0",
+    "ts-node": "3.0.2",
+    "tsconfig-paths": "2.1.2",
+    "tslint": "4.5.1",
+    "typescript": "2.2.1"
+  },
+  "engines": {
+    "node": "6.9.5"
+  }
+}
